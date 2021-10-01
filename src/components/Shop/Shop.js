@@ -20,6 +20,9 @@ const Shop = () => {
     }, []);
 
     const handleCartAdd = product => {
+        //adding quantity property to product 
+        //so that cart doesn't render NaN before refreshing
+        product.quantity = 1;
         const newCart = [...cart, product];
         setCart(newCart);
         addToDb(product.key);
@@ -43,9 +46,7 @@ const Shop = () => {
 
     const handleSearch = event => {
         const searchText = event.target.value;
-
         const matchedProducts = products.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()));
-
         setDisplayProducts(matchedProducts);
     }
 
@@ -61,11 +62,11 @@ const Shop = () => {
                     }
                         Products Found</h2>
                     {
-                        displayProducts.map(product => <Product product={product}
-                            key={
-                                product.key
-                            }
-                            handleCartAdd={handleCartAdd}></Product>)
+                        displayProducts.map(product => <Product
+                            product={product}
+                            key={product.key}
+                            handleCartAdd={handleCartAdd}>
+                        </Product>)
                     } </div>
                 <div className="cart-container">
                     <Cart cart={cart}></Cart>
