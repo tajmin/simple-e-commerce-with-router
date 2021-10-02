@@ -6,6 +6,7 @@ import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
 import OrderReview from './components/OrderReview/OrderReview';
 import Shop from './components/Shop/Shop';
+import SuccessfulPurchase from './components/SuccessfulPurchase/SuccessfulPurchase';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/inventory">
             <Inventory></Inventory>
+          </Route>
+          <Route path="/successful-purchase">
+            <SuccessfulPurchase></SuccessfulPurchase>
           </Route>
           <Route path="/*">
             <NotFound></NotFound>

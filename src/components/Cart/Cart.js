@@ -20,6 +20,7 @@ const Cart = (props) => {
             <h2>Order Summary</h2>
             <h4>Items Ordered: {totalQuantity}</h4>
             <h4>Total: ${totalPrice.toFixed(2)}</h4>
+            {props.children}
         </div>
     );
 };
