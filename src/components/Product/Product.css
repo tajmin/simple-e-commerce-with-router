@@ -1,19 +1,22 @@
 .product {
     display: flex;
-    border-bottom: 1px solid silver;
-    padding: 10px;
-    margin-left: 100px;
-
+    padding: 15px 30px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    box-shadow: rgb(0 0 0 / 10%) -12px 8px 15px -5px, rgb(0 0 0 / 4%) 0 10px 10px -5px;
+    border-radius: 5px;
 }
 
-.product h4 {
+h4 {
     color: darkslateblue;
 }
+
 .product .details {
     padding-left: 25px;
 }
 
-.product .details button {
+.product .details button,
+.btn-regular {
     background-color: #ff9900;
     width: 200px;
     height: 30px;
@@ -22,6 +25,7 @@
     cursor: pointer;
 }
 
-.product .details button:hover {
+.product .details button:hover,
+.btn-regular:hover {
     background-color: #ffac2f;
 }

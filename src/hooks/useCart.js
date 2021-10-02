@@ -22,7 +22,7 @@ const useCart = products => {
     }, [products]) //dependent on product change
 
 
-    return [cart]
+    return [cart, setCart]
 }
 
 export default useCart;
