@@ -1,0 +1,22 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+form input {
+    display: block;
+    width: 20rem;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+}
+
+form input[type=submit] {
+    width: 100%;
+    border: none;
+    background-color: #ffac2f;
+    color: whitesmoke;
+}
