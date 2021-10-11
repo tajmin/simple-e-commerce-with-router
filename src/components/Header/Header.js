@@ -6,7 +6,7 @@ import './Header.css'
 
 const Header = () => {
 
-    const { user, signOutGoogle } = useAuth()
+    const { user, signOutGoogle } = useAuth();
 
     return (
         <div className="header">

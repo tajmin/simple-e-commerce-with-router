@@ -7,6 +7,7 @@ import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import OrderReview from './components/OrderReview/OrderReview';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Shop from './components/Shop/Shop';
 import Signup from './components/Signup/Signup';
 import SuccessfulPurchase from './components/SuccessfulPurchase/SuccessfulPurchase';
@@ -31,12 +32,12 @@ function App() {
             <Route path="/order-review">
               <OrderReview></OrderReview>
             </Route>
-            <Route path="/inventory">
+            <PrivateRoute path="/inventory">
               <Inventory></Inventory>
-            </Route>
-            <Route path="/successful-purchase">
+            </PrivateRoute>
+            <PrivateRoute path="/successful-purchase">
               <SuccessfulPurchase></SuccessfulPurchase>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
