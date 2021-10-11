@@ -10,41 +10,45 @@ import OrderReview from './components/OrderReview/OrderReview';
 import Shop from './components/Shop/Shop';
 import Signup from './components/Signup/Signup';
 import SuccessfulPurchase from './components/SuccessfulPurchase/SuccessfulPurchase';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
   return (
     <div className={isDark ? "dark-theme" : ''}>
       <button onClick={() => setIsDark(!isDark)}>Toggle Dark</button>
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Shop></Shop>
-          </Route>
-          <Route path="/shop">
-            <Shop></Shop>
-          </Route>
-          <Route path="/order-review">
-            <OrderReview></OrderReview>
-          </Route>
-          <Route path="/inventory">
-            <Inventory></Inventory>
-          </Route>
-          <Route path="/successful-purchase">
-            <SuccessfulPurchase></SuccessfulPurchase>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="/signup">
-            <Signup></Signup>
-          </Route>
-          <Route path="/*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Shop></Shop>
+            </Route>
+            <Route path="/shop">
+              <Shop></Shop>
+            </Route>
+            <Route path="/order-review">
+              <OrderReview></OrderReview>
+            </Route>
+            <Route path="/inventory">
+              <Inventory></Inventory>
+            </Route>
+            <Route path="/successful-purchase">
+              <SuccessfulPurchase></SuccessfulPurchase>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/signup">
+              <Signup></Signup>
+            </Route>
+            <Route path="/*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
 
     </div>
   );

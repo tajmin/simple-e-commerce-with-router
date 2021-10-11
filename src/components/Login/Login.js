@@ -1,8 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
+
+    const { user, signInUsingGoogle } = useAuth();
+
     return (
         <div className="login-container">
             <div>
@@ -14,7 +18,7 @@ const Login = () => {
                 </form>
                 <div>
                     <p>New to Ema-John? <NavLink to="/signup">Create Account</NavLink> </p>
-                    <button className="btn-regular">Sign-in Using Google</button>
+                    <button onClick={signInUsingGoogle} className="btn-regular">Sign-in Using Google</button>
                 </div>
             </div>
         </div>
